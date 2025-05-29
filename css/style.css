@@ -289,12 +289,12 @@ button:focus{
 }
 
 .top-header .navbar .navbar-collapse ul li a.active{
-	background: #dd666c;
+	background: #5596C3;
 	color: #ffffff;
 }
 
 .top-header .navbar .navbar-collapse ul li a:hover{
-	background: #63c7bd;
+	background: #181E4A;
 	color: #ffffff;
 }
 
@@ -314,7 +314,7 @@ button:focus{
 }
 
 .navbar-toggler{
-	border: 1px solid #61D2B4;
+	border: 1px solid #181E4A;
 	border-radius: 0;
 	margin: 16px 15px;
 	padding: 10px 10px;
@@ -324,7 +324,7 @@ button:focus{
 	transition: all 0.2s linear;
 }
 .navbar-toggler span{
-	background: #61D2B4;
+	background: #5596C3;
 	display: block;
 	width: 25px;
 	height: 2px;
@@ -343,11 +343,11 @@ button:focus{
 }
 
 .navbar-toggler:hover{
-	border: 1px solid #dd666c;
+	border: 1px solid #181E4A;
 }
 
 .navbar-toggler:hover span{
-	background: #dd666c;
+	background: #181E4A;
 }
 
 
@@ -379,7 +379,7 @@ button:focus{
 
 .lbox-details::before{
 	content: "";
-	background: rgba(0,0,0,0);
+	background: rgba(0,0,0,0.2);
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -403,17 +403,17 @@ button:focus{
 	z-index: 3;
 }
 .lbox-details p{
-	color: #ffffff;
+	color: #ffffff;font-size: 48px;
 	position: relative;
 	z-index: 3;
 }
 .lbox-details p strong{
-	color: #dd666c;
+	color: #5596C3;
 	font-size: 40px;
 	font-family: 'Arial';
 }
 .lbox-details a.btn{
-	background: #63c7bd;
+	background: #181E4A;
 	padding: 10px 20px;
 	font-size: 20px;
 	text-transform: uppercase;
@@ -423,7 +423,7 @@ button:focus{
 	z-index: 3;
 }
 .lbox-details a.btn:hover{
-	background: #dd666c;
+	background: #5596C3;
 }
 
 /*------------------------------------------------------------------
@@ -723,7 +723,7 @@ button:focus{
 }
 
 .submit-button .btn-common{
-	background-color: #63c7bd;
+	background-color: #5596C3;
 	height: 45px;
 	line-height: 45px;
 	font-size: 16px;
@@ -745,7 +745,7 @@ button:focus{
 	transition: all 0.3s;
 }
 .submit-button .btn-common:hover{
-	background-color: #dd666c;
+	background-color: #181E4A;
 }
 
 .custom-select{

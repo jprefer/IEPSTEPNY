@@ -32,7 +32,44 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+<!-- For Form --><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+ <script type="text/javascript">
+        $(document).ready(function() {
 
+            $("#submit").click(function(e) {
+                e.preventDefault();
+
+                var name = $("#name").val(),
+                    email = $("#email").val(),
+                    phone = $("#phone").val(),
+                    wsource = $("#wsource").val(),
+                    desc = $("#desc").val();
+
+                $.ajax({
+                    type: "POST",
+                    url: 'https://6632bs8ve0.execute-api.us-east-1.amazonaws.com/TestAPI/contact-us',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        'name': name,
+                        'phone':phone,
+                        'email': email,
+                        'desc': desc,
+                        'wsource': "www.IEPSTEPNY.com - ContactForm"
+                    }),
+                    success: function(res){
+                        $('#form-response').text('Thank You Message Sent.');
+                        
+					
+                    },
+                    error: function(){
+                        $('#form-response').text('Error.');
+                    }
+                });
+
+            })
+
+        });
+    </script> 
 </head>
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 
@@ -57,8 +94,8 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="#home">Home</a></li>
-                        <li><a class="nav-link" href="#about">Save The Date</a></li>
-                        <li><a class="nav-link" href="#story">About Us</a></li>
+                        <li><a class="nav-link" href="#std">Save The Date</a></li>
+                        <li><a class="nav-link" href="#aboutus">About Us</a></li>
                         
 						<li><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
@@ -79,7 +116,7 @@
 								<h1>IEP 2026</h1>
 								<h2>21st ANNUAL INTERNATIONAL ESTATE PLANNING INSTITUTE</h3>
 								<p>Save The Date <strong>March 25 - 26 2026</strong></p>
-								<a href="#" class="btn ">Contact</a>
+								<a href="#contact" class="btn ">Contact</a>
 							</div>
 						</div>
 					</div>
@@ -89,17 +126,17 @@
 								<h1>IEP 2026</h1>
 								<h2>21st ANNUAL INTERNATIONAL ESTATE PLANNING INSTITUTE</h3>
 								<p>Save The Date <strong>March 25 - 26 2026</strong></p>
-								<a href="#" class="btn ">Contact</a>
+								<a href="#contact" class="btn ">Contact</a>
 							</div>
 						</div>
 					</div>
 					<div class="pogoSlider-slide" data-transition="shrinkReveal" data-duration="2000" style="background-image:url(images/slider-03.jpg);">
 						<div class="lbox-caption">
 							<div class="lbox-details">
-								<h1>#Leida & #Dominic</h1>
-								<h2>We're getting married</h3>
-								<p>Save The Date <strong>20 June 2018</strong></p>
-								<a href="#" class="btn">Contact</a>
+								<h1>IEP 2026</h1>
+								<h2>21st ANNUAL INTERNATIONAL ESTATE PLANNING INSTITUTE</h3>
+								<p>Save The Date <strong>March 25 - 26 2026</strong></p>
+								<a href="#contact" class="btn">Contact</a>
 							</div>
 						</div>
 						
@@ -110,14 +147,15 @@
 	</div>
 	<!-- End Banner -->
 	
-	<!-- Start About us -->
-	<div id="about" class="about-box">
+	<!-- Start STD -->
+	<div id="std" class="about-box">
 		<div class="about-a1">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="title-box">
-							<h2>Save The Date</h2><style>
+						<h2> </h2><br><br><br><br>
+							<style>
 .responsive {
   width: 100%;
   height: auto;
@@ -126,12 +164,13 @@
 </head>
 <body>
 
-<h2>Responsive Images</h2>
+<h2>Save The Date</h2>
 
-<p>If you want an image to scale down if it has to, but never scale up to be larger than its original size, use max-width: 100%.</p>
-<p>Resize the browser window to see the effect.</p>
+
 
 <img src="images/std.jpg" alt="Nature" class="responsive" width="600" height="400">
+<br><br>
+<h3>Mark your calendars for the <b>21st Annual International Estate Planning Institute</b>, hosted by STEP New York. Join us on March 26 & 27, 2026, at the Marriott Marquis in Times Square for a dynamic one-and-a-half-day event.</h3>
 						</div>
 					</div>
 				</div>
@@ -139,8 +178,8 @@
 					<div class="col-lg-12 col-md-12 col-sm-12">
 						<div class="row align-items-center about-main-info">
 							<div class="col-lg-8 col-md-6 col-sm-12">
-								<h2> About <span>Leida</span></h2>
-								<p>Fusce convallis ante id purus sagittis malesuada. Sed erat ipsum, suscipit sit amet auctor quis, vehicula ut leo. Maecenas felis nulla, tincidunt ac blandit a, consectetur quis elit. Nulla ut magna eu purus cursus sagittis. Praesent fermentum tincidunt varius. Proin sit amet tempus magna. Fusce pellentesque vulputate urna. </p>
+								<h2> What to  <span>Expect</span></h2>
+								<p>The Institute will feature industry leaders who will present the latest topics and trends in estate and family planning. Institute Registrants and STEP Members are also invited to a Pre-Institute Cocktail event at Phillips on Wednesday, March 25th.</p>
 							</div>
 							<div class="col-lg-4 col-md-6 col-sm-12">
 								<div class="about-img">
@@ -155,8 +194,9 @@
 								</div>
 							</div>
 							<div class="col-lg-8 col-md-6 col-sm-12">
-								<h2> About <span>Dominic</span></h2>
-								<p>Fusce convallis ante id purus sagittis malesuada. Sed erat ipsum, suscipit sit amet auctor quis, vehicula ut leo. Maecenas felis nulla, tincidunt ac blandit a, consectetur quis elit. Nulla ut magna eu purus cursus sagittis. Praesent fermentum tincidunt varius. Proin sit amet tempus magna. Fusce pellentesque vulputate urna. </p>
+								<h2> Membership &  <span>Contact</span></h2>
+								<p>Considering a STEP membership? Members receive a special rate for the Institute! Learn more and join at <a href="https://www.step.org/join" target="_blank">Join Us</a> </p>
+								<p>Stay tuned for more details. If you have any questions about the event or sponsorship opportunities, <a href="mailto:step.newyork@step.org">contact us at step.newyork@step.org </a>.</p>
 							</div>
 						</div>
 					</div>
@@ -164,206 +204,28 @@
 			</div>
 		</div>
 	</div>
-	<!-- End About us -->
+	<!-- End STD -->
 	
 	
 	
-	<!-- Start Family -->
-	<div id="family" class="family-box">
+	<!-- Start About Us -->
+	<div id="aboutus" class="family-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="title-box">
-						<h2>Family</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+						<h2>About Us</h2>
+						<p>STEP is a global professional body of over 22,000 legal, accounting, and trustee professionals dedicated to helping families plan for their futures. We uphold high professional standards, inform public policy, promote education, and connect practitioners worldwide. </p>
+						<p>STEP NY is the local branch of the Society of Trust and Estate Practitioners ("STEP"), a global professional organization of private client practitioners. Our primary purpose is to improve public understanding of the issues families face in relation to inheritance and succession planning, and to promote education and high professional standards among our members.</p>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="single-team-member">
-						<div class="family-img">
-							<img class="img-fluid" src="images/family-01.jpg" alt="" />
-						</div>
-						<div class="family-info">
-							<h4>Mr. Alonso Wiles </h4>
-							<p>{ Leida’s Father }</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="single-team-member">
-						<div class="family-img">
-							<img class="img-fluid" src="images/family-02.jpg" alt="" />
-						</div>
-						<div class="family-info">
-							<h4>Mr. Evon Wiles </h4>
-							<p>{ Leida’s Mother }</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="single-team-member">
-						<div class="family-img">
-							<img class="img-fluid" src="images/family-03.jpg" alt="" />
-						</div>
-						<div class="family-info">
-							<h4>Mr. Chris Wiles </h4>
-							<p>{ Leida’s Brother }</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="single-team-member">
-						<div class="family-img">
-							<img class="img-fluid" src="images/family-04.jpg" alt="" />
-						</div>
-						<div class="family-info">
-							<h4>Mr. Adina Wiles </h4>
-							<p>{ Leida’s Sister }</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="single-team-member">
-						<div class="family-img">
-							<img class="img-fluid" src="images/family-05.jpg" alt="" />
-						</div>
-						<div class="family-info">
-							<h4>Mr. Annetta Wiles </h4>
-							<p>{ Leida’s Sister }</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="single-team-member">
-						<div class="family-img">
-							<img class="img-fluid" src="images/family-06.jpg" alt="" />
-						</div>
-						<div class="family-info">
-							<h4>Mr. Ladonna Wiles </h4>
-							<p>{ Leida’s Sister }</p>
-						</div>
-					</div>
-				</div>
-			</div>
+			
+			
 		</div>
 	</div>
 	<!-- End Family -->
 	
-	<!-- Start Gallery -->
-	<div id="gallery" class="gallery-box">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="title-box">
-						<h2>Gallery</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<ul class="popup-gallery clearfix">
-					<li>
-						<a href="images/gallery-01.jpg">
-							<img class="img-fluid" src="images/gallery-01.jpg" alt="single image">
-							<span class="overlay"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-						</a>
-					</li>
-					<li>
-						<a href="images/gallery-02.jpg">
-							<img class="img-fluid" src="images/gallery-02.jpg" alt="single image">
-							<span class="overlay"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-						</a>
-					</li>
-					<li>
-						<a href="images/gallery-03.jpg">
-							<img class="img-fluid" src="images/gallery-03.jpg" alt="single image">
-							<span class="overlay"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-						</a>
-					</li>
-					<li>
-						<a href="images/gallery-04.jpg">
-							<img class="img-fluid" src="images/gallery-04.jpg" alt="single image">
-							<span class="overlay"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-						</a>
-					</li>
-					<li>
-						<a href="images/gallery-05.jpg">
-							<img class="img-fluid" src="images/gallery-05.jpg" alt="single image">
-							<span class="overlay"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-						</a>
-					</li>
-					<li>
-						<a href="images/gallery-06.jpg">
-							<img class="img-fluid" src="images/gallery-06.jpg" alt="single image">
-							<span class="overlay"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-						</a>
-					</li>
-					<li>
-						<a href="images/gallery-07.jpg">
-							<img class="img-fluid" src="images/gallery-07.jpg" alt="single image">
-							<span class="overlay"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-						</a>
-					</li>
-					<li>
-						<a href="images/gallery-08.jpg">
-							<img class="img-fluid" src="images/gallery-08.jpg" alt="single image">
-							<span class="overlay"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- End Gallery -->
-	
-	<!-- Start Events -->
-	<div id="events" class="events-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="title-box">
-						<h2>Events</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="event-inner">
-						<div class="event-img">
-							<img class="img-fluid" src="images/event-img-01.jpg" alt="" />
-						</div>
-						<h2>2 June 2018 Engagement</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-						<a href="#">See location ></a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="event-inner">
-						<div class="event-img">
-							<img class="img-fluid" src="images/event-img-02.jpg" alt="" />
-						</div>
-						<h2>3 June 2018 Main Ceremony </h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-						<a href="#">See location ></a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="event-inner">
-						<div class="event-img">
-							<img class="img-fluid" src="images/event-img-03.jpg" alt="" />
-						</div>
-						<h2>4 June 2018 Wedding party </h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-						<a href="#">See location ></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Events -->
 	
 	<!-- Start Contact -->
 	<div id="contact" class="contact-box">
@@ -371,8 +233,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="title-box">
-						<h2>Contact wth us</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+						<h2>Contact Us</h2>
+						
 					</div>
 				</div>
 			</div>
@@ -393,43 +255,22 @@
 								<div class="help-block with-errors"></div>
 							</div> 
 						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<select class="custom-select d-block form-control" id="guest" required data-error="Please select an item in the list.">
-								  <option disabled selected>Number Of Guest*</option>
-								  <option value="1">1</option>
-								  <option value="2">2</option>
-								  <option value="3">3</option>
-								  <option value="4">4</option>
-								  <option value="5">5</option>
-								</select>
-								<div class="help-block with-errors"></div>
-							</div> 
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<select class="custom-select d-block form-control" id="event" required data-error="Please select an item in the list.">
-								  <option disabled selected>I Am Attending*</option>
-								  <option value="1">All events</option>
-								  <option value="2">Wedding ceremony</option>
-								  <option value="3">Reception party</option>
-								</select>
-								<div class="help-block with-errors"></div>
-							</div> 
-						</div>
+						
+						
 						<div class="col-md-12">
 							<div class="form-group"> 
-								<textarea class="form-control" id="message" placeholder="Your Message" rows="8" data-error="Write your message" required></textarea>
+								<textarea class="form-control" id="desc" placeholder="Your Message" rows="8" data-error="Write your message" required></textarea>
 								<div class="help-block with-errors"></div>
 							</div>
 							<div class="submit-button text-center">
-								<button class="btn btn-common" id="submit" type="submit">Send Message</button>
+								<button class="btn btn-common" id="submit">Send Message</button>
 								<div id="msgSubmit" class="h3 text-center hidden"></div> 
 								<div class="clearfix"></div> 
 							</div>
 						</div>
 					  </div>            
 					</form>
+					<div id="form-response"></div>
 				  </div>
 				</div>
 			</div>
